@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AeroTalk Messenger — Web 2.0 Edition</title>
+  <title>Escargot Aero Messenger — Windows Live Messenger Revival</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -15,18 +15,18 @@
       --grass-1: #8bc34a;
       --grass-2: #56ab2f;
       --aqua: #00c6ff;
-      --pearl: #f4fbff;
-      --ink: #145887;
-      --deep: #0d3c63;
+      --ice: #eaf6ff;
+      --deep: #0c4e7e;
+      --deep-2: #0a3350;
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
+      color: #144f77;
       font-family: "Nunito", "Segoe UI", "Frutiger", "Frutiger Linotype", "Myriad Pro", "Lucida Grande", "Tahoma", "Verdana", "Arial", sans-serif;
-      color: #184f75;
-      background: linear-gradient(to bottom, #f9fcff, #eef7ff);
+      background: linear-gradient(to bottom, #f9fdff, #edf7ff 50%, #e5f3ff);
     }
 
     a { color: inherit; text-decoration: none; }
@@ -38,11 +38,11 @@
 
     .top-bar {
       height: 30px;
-      background: linear-gradient(to bottom, #4f82ab, #2f678f 48%, #245c84 52%, #194a6f);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.4), inset 0 -1px 0 rgba(0,0,0,.25);
-      color: #eff8ff;
+      color: #ebf7ff;
       font-size: 12px;
-      text-shadow: 0 -1px 0 rgba(0,0,0,.35);
+      text-shadow: 0 -1px 0 rgba(0,0,0,.34);
+      background: linear-gradient(to bottom, #4f82ab, #2f678f 48%, #245c84 52%, #194a6f);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.4), inset 0 -1px 0 rgba(0,0,0,.2);
     }
 
     .top-row {
@@ -50,13 +50,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     .top-links, .top-auth {
       display: flex;
-      gap: 10px;
       align-items: center;
+      gap: 10px;
       white-space: nowrap;
     }
 
@@ -65,19 +65,19 @@
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: linear-gradient(to bottom, rgba(255,255,255,.95), rgba(227,242,255,.88));
+      z-index: 30;
+      border-bottom: 1px solid rgba(24,112,184,.35);
+      background: linear-gradient(to bottom, rgba(255,255,255,.95), rgba(230,245,255,.85));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.85), 0 5px 16px rgba(38,95,141,.22);
       backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(24, 112, 184, .35);
-      box-shadow: 0 6px 18px rgba(43,111,165,.2), inset 0 1px 0 rgba(255,255,255,.8);
     }
 
     .header-row {
-      min-height: 82px;
+      min-height: 84px;
       display: grid;
       grid-template-columns: auto 1fr auto;
+      gap: 16px;
       align-items: center;
-      gap: 18px;
     }
 
     .brand {
@@ -91,12 +91,12 @@
       width: 54px;
       height: 54px;
       border-radius: 20%;
-      background: linear-gradient(to bottom, #8ce4ff, #43b8f3 49%, #1f8ad7 51%, #319ce8);
       border: 1px solid #1870b8;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.8), inset 0 -1px 0 rgba(0,0,0,.2), 0 5px 14px rgba(0,80,130,.34);
-      position: relative;
+      background: linear-gradient(to bottom, #8ce4ff, #43b8f3 49%, #1f8ad7 51%, #319ce8);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.8), inset 0 -1px 0 rgba(0,0,0,.18), 0 5px 14px rgba(0,80,130,.32);
       display: grid;
       place-items: center;
+      position: relative;
     }
 
     .logo::before {
@@ -105,43 +105,50 @@
       top: 1px;
       left: 1px;
       right: 1px;
-      height: 48%;
+      height: 47%;
       border-radius: 18px 18px 10px 10px;
-      background: linear-gradient(to bottom, rgba(255,255,255,.8), rgba(255,255,255,0));
+      background: linear-gradient(to bottom, rgba(255,255,255,.83), rgba(255,255,255,0));
       pointer-events: none;
     }
 
     .brand-title {
+      margin: 0;
+      line-height: 1;
       font-size: 27px;
       font-weight: 800;
       color: #126ea8;
       text-shadow: 0 1px 0 rgba(255,255,255,.9), 0 2px 4px rgba(0,0,0,.12);
-      margin: 0;
-      line-height: 1;
+    }
+
+    .brand-sub {
+      margin: 2px 0 0;
+      font-size: 12px;
+      color: #2f7cab;
+      text-shadow: 0 1px 0 rgba(255,255,255,.7);
     }
 
     .beta {
       position: absolute;
-      top: -9px;
-      right: -35px;
-      transform: rotate(12deg);
-      background: linear-gradient(to bottom, #ffe786, #ffc837 48%, #f1a800 52%, #ffb41d);
-      border: 1px solid #c88800;
+      top: -10px;
+      right: -42px;
+      transform: rotate(10deg);
       border-radius: 999px;
-      padding: 3px 9px;
+      border: 1px solid #c88800;
+      padding: 3px 10px;
       font-size: 11px;
       font-weight: 800;
       color: #663b00;
-      box-shadow: 0 4px 10px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.7);
+      background: linear-gradient(to bottom, #ffe786, #ffc837 48%, #f1a800 52%, #ffb41d);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.7), 0 4px 10px rgba(0,0,0,.2);
     }
 
     nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
       display: flex;
       justify-content: center;
       gap: 16px;
-      padding: 0;
-      margin: 0;
-      list-style: none;
       font-weight: 700;
       color: #1c679a;
     }
@@ -149,15 +156,15 @@
     .gloss-btn {
       position: relative;
       display: inline-block;
+      overflow: hidden;
       border-radius: 999px;
       border: 1px solid #1870b8;
       color: #fff;
       font-weight: 800;
       letter-spacing: .02em;
-      text-shadow: 0 -1px 0 rgba(0,0,0,.35), 0 1px 0 rgba(255,255,255,.22);
+      text-shadow: 0 -1px 0 rgba(0,0,0,.35), 0 1px 0 rgba(255,255,255,.2);
       box-shadow: inset 0 1px 0 rgba(255,255,255,.7), inset 0 -1px 0 rgba(0,0,0,.15), 0 4px 10px rgba(26,110,200,.35), 0 1px 2px rgba(0,0,0,.1);
-      transition: transform .3s ease, box-shadow .3s ease, filter .3s ease;
-      overflow: hidden;
+      transition: transform .3s ease, box-shadow .3s ease;
     }
 
     .gloss-btn::before {
@@ -172,10 +179,17 @@
       pointer-events: none;
     }
 
-    .gloss-btn:hover { transform: scale(1.03); box-shadow: inset 0 1px 0 rgba(255,255,255,.7), inset 0 -1px 0 rgba(0,0,0,.15), 0 7px 16px rgba(26,110,200,.42), 0 2px 3px rgba(0,0,0,.14); }
-    .gloss-btn:active { background-image: linear-gradient(to bottom, #1b7ed0, #3aa8ef 55%, #7bd6ff); transform: translateY(1px); }
+    .gloss-btn:hover {
+      transform: scale(1.03);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.7), inset 0 -1px 0 rgba(0,0,0,.15), 0 8px 17px rgba(26,110,200,.42), 0 2px 4px rgba(0,0,0,.13);
+    }
 
-    .btn-blue { background: linear-gradient(to bottom, #7bd6ff, #3aa8ef 49%, #1b7ed0 51%, #2f9ae5); padding: 10px 20px; }
+    .gloss-btn:active {
+      transform: translateY(1px);
+      background-image: linear-gradient(to bottom, #1b7ed0, #3aa8ef 55%, #7bd6ff);
+    }
+
+    .btn-blue { background: linear-gradient(to bottom, #7bd6ff, #3aa8ef 49%, #1b7ed0 51%, #2f9ae5); padding: 10px 21px; }
     .btn-green { background: linear-gradient(to bottom, #b1ed85, #78d34d 49%, #56ab2f 51%, #69c73d); border-color: #458c23; padding: 16px 30px; }
     .btn-main { padding: 16px 30px; font-size: 18px; }
 
@@ -189,56 +203,45 @@
     .cloud {
       position: absolute;
       border-radius: 999px;
-      background: radial-gradient(circle at 40% 30%, rgba(255,255,255,.95), rgba(255,255,255,.7) 55%, rgba(255,255,255,0) 70%);
+      background: radial-gradient(circle at 40% 30%, rgba(255,255,255,.95), rgba(255,255,255,.7) 56%, rgba(255,255,255,0) 70%);
       filter: blur(1px);
       animation: drift linear infinite;
     }
 
-    @keyframes drift {
-      from { transform: translateX(-15vw); }
-      to { transform: translateX(115vw); }
-    }
+    @keyframes drift { from { transform: translateX(-15vw); } to { transform: translateX(115vw); } }
 
     .bubble {
       position: absolute;
       bottom: -80px;
       border-radius: 50%;
-      background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.95), rgba(193,235,255,.55) 45%, rgba(109,189,235,.15));
+      background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.95), rgba(193,235,255,.55) 45%, rgba(109,189,235,.16));
       border: 1px solid rgba(255,255,255,.5);
       box-shadow: inset 0 0 10px rgba(255,255,255,.5), 0 8px 16px rgba(8,102,153,.2);
       animation: rise linear infinite;
     }
 
-    @keyframes rise {
-      from { transform: translateY(0); opacity: .9; }
-      to { transform: translateY(-120vh); opacity: 0; }
-    }
+    @keyframes rise { from { transform: translateY(0); opacity: .9; } to { transform: translateY(-120vh); opacity: 0; } }
 
     .hero-content {
       position: relative;
       z-index: 2;
       text-align: center;
       padding-top: 120px;
-      padding-bottom: 70px;
+      padding-bottom: 76px;
     }
 
-    .logo-big-wrap {
-      display: inline-grid;
-      place-items: center;
-      margin-bottom: 18px;
-      position: relative;
-    }
+    .logo-big-wrap { display: inline-grid; place-items: center; margin-bottom: 18px; }
 
     .logo-big {
-      width: 144px;
-      height: 144px;
+      width: 146px;
+      height: 146px;
       border-radius: 50%;
-      background: linear-gradient(to bottom, #a0ebff, #46bff5 49%, #1e8dd8 51%, #3caef3);
       border: 1px solid #1a76bc;
-      box-shadow: inset 0 2px 0 rgba(255,255,255,.74), inset 0 -1px 0 rgba(0,0,0,.22), 0 8px 24px rgba(9,86,133,.36);
-      position: relative;
+      background: linear-gradient(to bottom, #a0ebff, #46bff5 49%, #1e8dd8 51%, #3caef3);
+      box-shadow: inset 0 2px 0 rgba(255,255,255,.74), inset 0 -1px 0 rgba(0,0,0,.22), 0 9px 24px rgba(9,86,133,.36);
       display: grid;
       place-items: center;
+      position: relative;
     }
 
     .logo-big::before {
@@ -246,44 +249,48 @@
       position: absolute;
       inset: 2px 2px auto;
       height: 48%;
-      border-radius: 100px 100px 30px 30px;
+      border-radius: 100px 100px 32px 32px;
       background: linear-gradient(to bottom, rgba(255,255,255,.82), rgba(255,255,255,0));
     }
 
     .reflection {
-      width: 128px;
+      width: 130px;
       height: 30px;
-      border-radius: 50%;
       margin-top: 8px;
+      border-radius: 50%;
       background: linear-gradient(to bottom, rgba(255,255,255,.35), rgba(255,255,255,0));
       transform: scaleY(-1);
       opacity: .55;
-      filter: blur(1px);
     }
 
     h1 {
-      font-size: clamp(48px, 8vw, 64px);
       margin: 10px 0;
-      color: #0f5f99;
+      font-size: clamp(48px, 8vw, 64px);
       letter-spacing: .02em;
+      color: #0f5f99;
       text-shadow: 0 2px 4px rgba(0,0,0,.15), 0 1px 0 rgba(255,255,255,.8);
     }
 
     .subtitle {
-      font-size: clamp(19px, 2.7vw, 22px);
-      margin: 0 auto 26px;
-      max-width: 700px;
+      margin: 0 auto 10px;
+      max-width: 760px;
+      font-size: clamp(19px, 2.8vw, 22px);
       color: #235d87;
       text-shadow: 0 1px 0 rgba(255,255,255,.7);
     }
 
-    .hero-actions {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
+    .hero-note {
+      margin: 0 auto 24px;
+      max-width: 780px;
+      font-size: 15px;
+      background: linear-gradient(to bottom, rgba(255,255,255,.9), rgba(220,243,255,.65));
+      border: 1px solid rgba(33,119,170,.28);
+      border-radius: 14px;
+      padding: 10px 14px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.75), 0 5px 14px rgba(24,86,126,.17);
     }
+
+    .hero-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 10px; }
 
     .small-link { font-size: 14px; color: #155d8e; text-decoration: underline; }
 
@@ -291,56 +298,56 @@
       position: absolute;
       right: 20px;
       top: 24px;
-      background: linear-gradient(to bottom, #ff9f40, #ff7a00 49%, #df5d00 51%, #f46b00);
-      color: #fff6ea;
-      font-weight: 800;
       border-radius: 999px;
       border: 1px solid #c44f00;
       padding: 9px 16px;
-      box-shadow: 0 8px 16px rgba(128,53,0,.3), inset 0 1px 0 rgba(255,255,255,.7);
+      color: #fff6ea;
+      font-weight: 800;
       text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+      background: linear-gradient(to bottom, #ff9f40, #ff7a00 49%, #df5d00 51%, #f46b00);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.7), 0 8px 16px rgba(128,53,0,.3);
     }
 
     .section {
-      position: relative;
-      padding: 80px 0;
+      padding: 78px 0;
       border-top: 1px solid rgba(255,255,255,.95);
       border-bottom: 1px solid rgba(90,139,171,.35);
-      background: linear-gradient(to bottom, rgba(255,255,255,.92), rgba(234,247,255,.86));
+      background: linear-gradient(to bottom, rgba(255,255,255,.93), rgba(234,247,255,.86));
     }
 
-    .section h2 {
-      margin-top: 0;
-      font-size: clamp(32px, 6vw, 40px);
-      color: #0f679f;
-      text-align: center;
-      text-shadow: 0 2px 0 rgba(255,255,255,.8), 0 2px 8px rgba(0,0,0,.08);
+    .cloudy {
+      background: radial-gradient(circle at 14% 20%, rgba(255,255,255,.8), rgba(255,255,255,0) 30%),
+                  radial-gradient(circle at 77% 16%, rgba(255,255,255,.68), rgba(255,255,255,0) 28%),
+                  linear-gradient(to bottom, #e8f6ff, #d9edfb);
     }
 
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+    .title-wrap { text-align: center; margin-bottom: 18px; }
+    .title-wrap h2 { margin: 0; font-size: clamp(32px, 6vw, 40px); color: #0f679f; text-shadow: 0 2px 0 rgba(255,255,255,.8), 0 2px 8px rgba(0,0,0,.08); }
+    .title-wrap p { margin: 9px auto 0; max-width: 720px; font-size: 17px; color: #2f739d; }
+
+    .inset-line {
+      height: 2px;
+      margin: 18px auto 26px;
+      max-width: 840px;
+      background: linear-gradient(to bottom, rgba(255,255,255,.95), rgba(86,145,187,.45));
+      border-radius: 999px;
     }
 
-    .feature {
-      position: relative;
+    .features-grid, .testimonials { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+
+    .feature, .card {
       border-radius: 18px;
       padding: 20px;
-      background: linear-gradient(to bottom, rgba(255,255,255,.9), rgba(224,243,255,.7) 50%, rgba(197,231,251,.55));
       border: 1px solid rgba(55,131,182,.35);
+      background: linear-gradient(to bottom, rgba(255,255,255,.9), rgba(224,243,255,.7) 50%, rgba(197,231,251,.55));
       box-shadow: inset 0 1px 0 rgba(255,255,255,.75), 0 4px 12px rgba(0,0,0,.15), 0 1px 3px rgba(0,0,0,.1);
       transition: transform .4s ease, box-shadow .4s ease;
+      position: relative;
     }
 
-    .feature:hover { transform: translateY(-4px); box-shadow: inset 0 1px 0 rgba(255,255,255,.75), 0 12px 22px rgba(17,87,130,.24), 0 1px 3px rgba(0,0,0,.15); }
+    .feature:hover, .card:hover { transform: translateY(-4px); box-shadow: inset 0 1px 0 rgba(255,255,255,.75), 0 12px 22px rgba(17,87,130,.24), 0 1px 3px rgba(0,0,0,.15); }
 
-    .feature svg {
-      width: 76px;
-      height: 76px;
-      display: block;
-      margin-bottom: 10px;
-    }
+    .feature svg { width: 80px; height: 80px; display: block; margin-bottom: 10px; }
 
     .ribbon {
       position: absolute;
@@ -357,38 +364,60 @@
       box-shadow: 0 4px 8px rgba(0,0,0,.2), inset 0 1px 0 rgba(255,255,255,.55);
     }
 
-    .shots {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-top: 24px;
+    #screens .layout { display: grid; grid-template-columns: 1.1fr .9fr; gap: 22px; align-items: center; }
+
+    .phone {
+      max-width: 370px;
+      margin: 0 auto;
+      padding: 16px;
+      border-radius: 42px;
+      background: linear-gradient(to bottom, #f8fdff, #d8ecfa 45%, #c7e2f3 55%, #f1faff);
+      border: 1px solid rgba(43,93,131,.45);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.9), inset 0 -1px 0 rgba(0,0,0,.2), 0 14px 28px rgba(14,60,91,.3);
+      position: relative;
     }
 
-    .shot {
-      border-radius: 16px;
-      padding: 16px;
-      background: linear-gradient(to bottom, #ffffff, #e3f3ff 46%, #d3ebfb 54%, #e8f7ff);
-      border: 1px solid rgba(59,133,183,.44);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 5px 13px rgba(0,0,0,.14);
+    .speaker { width: 74px; height: 8px; margin: 4px auto 12px; border-radius: 999px; background: linear-gradient(to bottom, #6f8ea8, #4a6782); }
+
+    .screen {
+      border-radius: 24px;
+      padding: 14px;
+      min-height: 510px;
+      background: linear-gradient(to bottom, #ffffff, #e7f4ff 48%, #d2eafb 52%, #edf8ff);
+      border: 1px solid rgba(61,122,163,.42);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.8), inset 0 -1px 0 rgba(0,0,0,.1);
+    }
+
+    .chat-head {
+      border-radius: 14px;
+      padding: 10px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(to bottom, #7fd6ff, #44b2ee 49%, #248dd7 51%, #3ba0e8);
+      color: #fff;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.28);
+    }
+
+    .avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 25%, #ffef95, #f5ba22 64%, #dd9700);
+      border: 1px solid rgba(255,255,255,.6);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.65);
     }
 
     .chat-bubble {
-      border-radius: 22px;
-      padding: 10px 14px;
+      border-radius: 20px;
+      padding: 10px 13px;
       margin: 8px 0;
       width: max-content;
       max-width: 85%;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.75), 0 4px 10px rgba(0,0,0,.14);
       border: 1px solid rgba(43,112,156,.35);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.75), 0 4px 10px rgba(0,0,0,.14);
       font-size: 15px;
-    }
-
-    .chat-bubble.me {
-      margin-left: auto;
-      background: linear-gradient(to bottom, #95e8ff, #5abff2 49%, #2e97db 51%, #4eb6ed);
-      color: #fff;
-      border-color: #2a7fb6;
-      text-shadow: 0 -1px 0 rgba(0,0,0,.3);
     }
 
     .chat-bubble.you {
@@ -396,66 +425,68 @@
       color: #1a5f8e;
     }
 
-    .testimonials {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 20px;
+    .chat-bubble.me {
+      margin-left: auto;
+      background: linear-gradient(to bottom, #b4ef89, #82d956 49%, #5cae34 51%, #71c947);
+      color: #fff;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+      border-color: #478f25;
     }
 
-    .card {
-      border-radius: 16px;
-      padding: 16px;
-      background: linear-gradient(to bottom, #fff, #f1f9ff 50%, #e0f1fc);
-      border: 1px solid rgba(56,125,176,.35);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 5px 12px rgba(0,0,0,.12);
+    .input-row { margin-top: 14px; display: flex; gap: 8px; }
+    .fake-input { flex: 1; border-radius: 12px; padding: 10px 12px; border: 1px solid rgba(59,122,165,.4); background: linear-gradient(to bottom, #fff, #e9f5ff); font-size: 14px; }
+
+    .callouts { display: grid; gap: 10px; }
+    .callout {
+      border-radius: 14px;
+      border: 1px solid rgba(55,131,182,.35);
+      background: linear-gradient(to bottom, #ffffff, #e4f3ff 46%, #d2ebfb 54%, #e8f7ff);
+      padding: 12px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 5px 13px rgba(0,0,0,.14);
     }
+
+    .callout strong { display: block; color: #0f679f; margin-bottom: 3px; }
 
     .stars { color: #ffac1f; letter-spacing: 2px; font-size: 18px; text-shadow: 0 1px 0 rgba(255,255,255,.8); }
 
     .download-seal {
       width: 128px;
       height: 128px;
-      border-radius: 50%;
       margin: 0 auto 14px;
+      border-radius: 50%;
       display: grid;
       place-items: center;
       text-align: center;
       color: #fff;
       font-weight: 800;
-      background: radial-gradient(circle at 30% 25%, #76deff, #2697de 55%, #1371b4);
       border: 2px solid #0c6099;
+      background: radial-gradient(circle at 30% 25%, #76deff, #2697de 55%, #1371b4);
       box-shadow: inset 0 2px 0 rgba(255,255,255,.7), 0 8px 18px rgba(9,76,118,.35);
     }
 
-    .store-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 14px;
+    #download {
+      background: linear-gradient(to bottom, #7dd7ff, #38a8ef 49%, #1b86d4 51%, #2f9be5);
+      color: #eef9ff;
+      text-align: center;
     }
 
+    .store-buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 14px; }
+
     .store {
-      min-width: 180px;
+      min-width: 190px;
       border-radius: 12px;
       padding: 12px 14px;
-      color: #fff;
-      background: linear-gradient(to bottom, #3c4d63, #2f3f54 48%, #232f42 52%, #2d3d50);
-      border: 1px solid #1d2735;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 5px 10px rgba(0,0,0,.3);
-      text-align: left;
       font-size: 12px;
+      text-align: left;
+      color: #fff;
+      border: 1px solid #1d2735;
+      background: linear-gradient(to bottom, #3c4d63, #2f3f54 48%, #232f42 52%, #2d3d50);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 5px 10px rgba(0,0,0,.3);
     }
 
     .store strong { display: block; font-size: 17px; }
 
-    .social {
-      margin-top: 18px;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-    }
+    .social { margin-top: 16px; display: flex; justify-content: center; gap: 10px; }
 
     .social a {
       width: 42px;
@@ -465,37 +496,45 @@
       place-items: center;
       font-weight: 800;
       color: #fff;
-      background: linear-gradient(to bottom, #8adfff, #3ba8ef 49%, #1f80d0 51%, #3097e1);
       border: 1px solid #1869b1;
+      background: linear-gradient(to bottom, #8adfff, #3ba8ef 49%, #1f80d0 51%, #3097e1);
       box-shadow: inset 0 1px 0 rgba(255,255,255,.7), 0 4px 10px rgba(0,0,0,.2);
     }
 
     footer {
-      padding: 24px 0;
-      color: #cde8ff;
       background: linear-gradient(to bottom, #164e78, #0a3350);
-      text-align: center;
-      font-size: 12px;
-      letter-spacing: .03em;
+      color: #cde8ff;
+      padding: 34px 0;
+      font-size: 13px;
     }
 
-    .wave {
-      display: block;
-      width: 100%;
-      margin-bottom: -1px;
+    .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .footer-grid h4 { margin: 0 0 10px; color: #fff; font-size: 15px; }
+    .footer-grid ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+
+    .subscribe {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+      flex-wrap: wrap;
     }
 
-    @media (max-width: 768px) {
+    .subscribe input { flex: 1; min-width: 120px; border-radius: 10px; border: 1px solid #2d6b95; padding: 8px 10px; background: linear-gradient(to bottom, #fefefe, #dcefff); }
+
+    .wave { width: 100%; display: block; margin-bottom: -1px; }
+
+    @media (max-width: 980px) {
       .header-row { grid-template-columns: 1fr; padding: 10px 0; }
       nav ul { flex-wrap: wrap; gap: 10px 14px; font-size: 14px; }
-      .features-grid, .testimonials, .shots { grid-template-columns: 1fr; }
-      .beta { right: auto; left: 30px; top: -10px; }
+      #screens .layout { grid-template-columns: 1fr; }
+      .features-grid, .testimonials, .footer-grid { grid-template-columns: 1fr; }
+      .beta { right: auto; left: 30px; }
     }
 
     @media (max-width: 480px) {
       .top-links { display: none; }
       h1 { font-size: 44px; }
-      .hero-content { padding-top: 110px; }
+      .hero-content { padding-top: 108px; }
       .web2-badge { right: 10px; top: 18px; font-size: 13px; }
     }
   </style>
@@ -520,17 +559,14 @@
     <div class="container header-row">
       <div class="brand">
         <div class="logo" aria-hidden="true">
-          <svg viewBox="0 0 64 64" width="32" height="32" role="img" aria-label="Логотип AeroTalk">
-            <defs>
-              <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#ffffff" stop-opacity="0.92"/>
-                <stop offset="1" stop-color="#ffffff" stop-opacity="0.2"/>
-              </linearGradient>
-            </defs>
-            <path d="M12 32c0-11 9-20 20-20s20 9 20 20-9 20-20 20h-9l-8 7 2-9C14 47 12 40 12 32z" fill="url(#g1)"/>
+          <svg viewBox="0 0 64 64" width="32" height="32" role="img" aria-label="Логотип">
+            <path d="M12 32c0-11 9-20 20-20s20 9 20 20-9 20-20 20h-9l-8 7 2-9C14 47 12 40 12 32z" fill="rgba(255,255,255,.83)"/>
           </svg>
         </div>
-        <h2 class="brand-title">AeroTalk</h2>
+        <div>
+          <h2 class="brand-title">Escargot Aero</h2>
+          <p class="brand-sub">Windows Live Messenger Custom Server</p>
+        </div>
         <span class="beta">Beta</span>
       </div>
       <nav>
@@ -564,14 +600,8 @@
       <div class="container hero-content">
         <div class="logo-big-wrap">
           <div class="logo-big" aria-hidden="true">
-            <svg viewBox="0 0 100 100" width="64" height="64" role="img" aria-label="AeroTalk orb">
-              <defs>
-                <radialGradient id="orb" cx="35%" cy="30%" r="70%">
-                  <stop offset="0" stop-color="#fff" stop-opacity="0.95"/>
-                  <stop offset="1" stop-color="#d7f4ff" stop-opacity="0.72"/>
-                </radialGradient>
-              </defs>
-              <circle cx="50" cy="50" r="29" fill="url(#orb)"/>
+            <svg viewBox="0 0 100 100" width="66" height="66" role="img" aria-label="Aero orb">
+              <circle cx="50" cy="50" r="29" fill="rgba(255,255,255,.74)"/>
               <path d="M30 50h40" stroke="#1f85ca" stroke-width="6" stroke-linecap="round"/>
               <path d="M50 30v40" stroke="#1f85ca" stroke-width="6" stroke-linecap="round"/>
             </svg>
@@ -579,15 +609,16 @@
           <div class="reflection"></div>
         </div>
 
-        <h1>AeroTalk Messenger</h1>
-        <p class="subtitle">Ретро-мессенджер с глянцевым интерфейсом эпохи Vista и первого iPhone. Быстрые чаты, группы и звонки — как будто снова 2008.</p>
+        <h1>Escargot Aero Messenger</h1>
+        <p class="subtitle">Кастомный сервер для Windows Live Messenger 8.5/2009 с аутентичной эстетикой эпохи Vista.</p>
+        <p class="hero-note">Подключай старый WLM клиент, возвращай список контактов, статусы, эмодзи и дрожащий ностальгический «nudge» — всё на современном серверном ядре, но с духом 2004–2009.</p>
 
         <div class="hero-actions">
           <a href="#download" class="gloss-btn btn-blue btn-main">Скачать для Windows</a>
-          <a href="#download" class="gloss-btn btn-green btn-main">Скачать для Mac</a>
+          <a href="#download" class="gloss-btn btn-green btn-main">Скачать Launcher</a>
         </div>
 
-        <a href="#download" class="small-link">Доступно также для iOS и Android</a>
+        <a href="#download" class="small-link">Доступно также для iOS и Android-клиентов через совместимый шлюз</a>
       </div>
     </section>
 
@@ -597,22 +628,170 @@
 
     <section id="features" class="section">
       <div class="container">
-        <h2>Возможности</h2>
+        <div class="title-wrap">
+          <h2>Классика Messenger, но на новом сервере</h2>
+          <p>Мы сохранили старый внешний вид и поведение клиента, но добавили устойчивость, резервирование и быстрый вход без танцев с hosts-файлом.</p>
+        </div>
+        <div class="inset-line"></div>
+
         <div class="features-grid">
           <article class="feature">
-            <span class="ribbon">NEW!</span>
-            <svg viewBox="0 0 96 96" role="img" aria-label="Чаты">
-              <defs>
-                <linearGradient id="icon1" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stop-color="#9be6ff"/>
-                  <stop offset="1" stop-color="#2f9de5"/>
-                </linearGradient>
-              </defs>
-              <rect x="10" y="10" width="76" height="76" rx="18" fill="url(#icon1)"/>
-              <path d="M26 32h44M26 46h31M26 60h38" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+            <svg viewBox="0 0 96 96" role="img" aria-label="Шифрование">
+              <defs><linearGradient id="i1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9be6ff"/><stop offset="1" stop-color="#2f9de5"/></linearGradient></defs>
+              <rect x="10" y="10" width="76" height="76" rx="18" fill="url(#i1)"/>
+              <path d="M48 30c8 0 14 6 14 14v4h4v20H30V48h4v-4c0-8 6-14 14-14z" fill="#fff"/>
             </svg>
-            <h3>Мгновенные чаты</h3>
-            <p>Личные и групповые диалоги с привычными пузырями сообщений, звуками и живыми уведомлениями.</p>
+            <h3>Полное шифрование</h3>
+            <p>Трафик между клиентом и сервером защищён, а личные переписки недоступны третьим лицам. Ваши сообщения остаются вашими.</p>
           </article>
 
-        
+          <article class="feature">
+            <span class="ribbon">NEW!</span>
+            <svg viewBox="0 0 96 96" role="img" aria-label="Голос и видео">
+              <defs><linearGradient id="i2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b1ed85"/><stop offset="1" stop-color="#56ab2f"/></linearGradient></defs>
+              <rect x="10" y="10" width="76" height="76" rx="18" fill="url(#i2)"/>
+              <path d="M27 40h28v17H27zM57 45l12-7v21l-12-7z" fill="#fff"/>
+            </svg>
+            <h3>Голос и видео в HD</h3>
+            <p>Новые медиа-модули дают стабильные созвоны даже в «ленивой» сети. Чистый звук и картинка ближе к современным стандартам.</p>
+          </article>
+
+          <article class="feature">
+            <svg viewBox="0 0 96 96" role="img" aria-label="Мультидевайс">
+              <defs><linearGradient id="i3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9be6ff"/><stop offset="1" stop-color="#2f9de5"/></linearGradient></defs>
+              <rect x="10" y="10" width="76" height="76" rx="18" fill="url(#i3)"/>
+              <rect x="23" y="27" width="50" height="33" rx="4" fill="#fff"/>
+              <rect x="39" y="64" width="18" height="7" rx="3" fill="#fff"/>
+            </svg>
+            <h3>На всех устройствах сразу</h3>
+            <p>Начните диалог в оригинальном клиенте Windows Live Messenger и продолжайте на других совместимых приложениях без потери истории.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="screens" class="section">
+      <div class="container">
+        <div class="title-wrap">
+          <h2>Как это выглядит внутри</h2>
+          <p>Скевоморфные пузыри, статусная строка, аватары и знакомая подача сообщений — прямо как в 2008.</p>
+        </div>
+        <div class="inset-line"></div>
+        <div class="layout">
+          <article class="phone">
+            <div class="speaker"></div>
+            <div class="screen">
+              <div class="chat-head"><span class="avatar"></span><strong>Kate (Online)</strong></div>
+              <div class="chat-bubble you">Привет! Ты реально запустил старый MSN? :-)</div>
+              <div class="chat-bubble me">Да, через Escargot Aero! Всё снова работает.</div>
+              <div class="chat-bubble you">Вау, даже nudge и статусы вернули ⭐</div>
+              <div class="chat-bubble me">И смайлы из 2009 тоже на месте 😎</div>
+              <div class="input-row">
+                <div class="fake-input">Введите сообщение...</div>
+                <a href="#" class="gloss-btn btn-blue">➤</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="callouts">
+            <div class="callout"><strong>Старый клиент, новый сервер</strong>WLM 8.5/2009 подключается без ручной пересборки клиента — только launcher и логин.</div>
+            <div class="callout"><strong>Контакты и статусы</strong>Полная синхронизация списка друзей, групп и статусных иконок между сессиями.</div>
+            <div class="callout"><strong>Ретро-детали</strong>Winks, nudges, классические звуки входа, цветные темы и всплывающие уведомления.</div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="section cloudy">
+      <div class="container">
+        <div class="title-wrap">
+          <h2>Нас любят миллионы</h2>
+          <p>Присоединяйся — бесплатно навсегда.</p>
+        </div>
+        <div class="testimonials">
+          <article class="card">
+            <div class="avatar" aria-hidden="true"></div>
+            <h3>Андрей · Retro Community Admin</h3>
+            <p>Поставили Escargot Aero на наш ностальгический сервер — онлайн вырос в 2 раза, народ сидит вечерами как в старые времена.</p>
+            <div class="stars">★★★★★</div>
+          </article>
+          <article class="card">
+            <div class="avatar" aria-hidden="true"></div>
+            <h3>Lisa · WLM Modder</h3>
+            <p>Лучший компромисс между совместимостью и безопасностью. Ощущается как живой Windows Live, а не имитация.</p>
+            <div class="stars">★★★★★</div>
+          </article>
+          <article class="card">
+            <div class="avatar" aria-hidden="true"></div>
+            <h3>Михаил · Collector</h3>
+            <p>Наконец-то можно запускать старые сборки клиента не «в музейном режиме», а в реальной ежедневной переписке.</p>
+            <div class="stars">★★★★★</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="section">
+      <div class="container">
+        <div class="download-seal">OFFICIAL<br>DOWNLOAD</div>
+        <h2 style="margin:0;">Готов начать общение?</h2>
+        <p>Подключи старый клиент Windows Live Messenger и верни свои чаты в 2009.</p>
+
+        <div class="store-buttons">
+          <a href="#" class="store"><span>Download on the</span><strong>App Store</strong></a>
+          <a href="#" class="store"><span>Get it on</span><strong>Google Play</strong></a>
+          <a href="#" class="store"><span>Install for</span><strong>Desktop (WLM)</strong></a>
+        </div>
+
+        <p style="margin:14px 0 0;">Бесплатно · Без рекламы · Без сбора данных</p>
+
+        <div class="social">
+          <a href="#" aria-label="Twitter">t</a>
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="RSS">rss</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h4>Продукт</h4>
+        <ul>
+          <li><a href="#">Возможности</a></li>
+          <li><a href="#">Безопасность</a></li>
+          <li><a href="#">Версии клиента</a></li>
+          <li><a href="#">Системные требования</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Компания</h4>
+        <ul>
+          <li><a href="#">О проекте</a></li>
+          <li><a href="#">Команда</a></li>
+          <li><a href="#">История обновлений</a></li>
+          <li><a href="#">Партнёры</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Поддержка</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Форум</a></li>
+          <li><a href="#">Discord</a></li>
+          <li><a href="#">Статус серверов</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Подписаться на новости</h4>
+        <p>Новые сборки клиента и совместимость с WLM.</p>
+        <div class="subscribe">
+          <input type="email" placeholder="your@email.com" aria-label="Email">
+          <a href="#" class="gloss-btn btn-blue">OK</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
